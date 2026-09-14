@@ -1,18 +1,17 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import {  actions } from '../../actions'
-import { bindActionCreators } from 'redux';
+import { addPoints, removePoints } from '../../reducers';
 
 function House({ house, points }) {
   const dispatch = useDispatch();
-  const { addPoints, removePoints } = bindActionCreators(actions, dispatch)
+  
 
   function handleAddPoints() {
-    addPoints(house, 10);
+    dispatch(addPoints({house: house, points: 10}));
   }
 
   function handleRemovePoints() {
-    removePoints(house, 10);
+    dispatch(removePoints({house: house, points: 10}));
   }
 
   return (

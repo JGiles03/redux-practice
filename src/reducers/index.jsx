@@ -1,3 +1,5 @@
+import { createSlice } from "@reduxjs/toolkit";
+
 const initialState = {
   Gryffindor: 0,
   Hufflepuff: 0,
@@ -5,21 +7,18 @@ const initialState = {
   Slytherin: 0
 };
 
-function pointsReducer(state = initialState, action) {
-  switch (action.type) {
-    case 'ADD_POINTS':
-      return {
-        ...state,
-        [action.house]: state[action.house] + action.points
-      };
-    case 'REMOVE_POINTS':
-      return {
-        ...state,
-        [action.house]: state[action.house] - action.points
-      };
-    default:
-      return state;
+const pointsSlice = createSlice({
+  name: "points",
+  initialState: initialState,
+  reducers: {
+    addPoints: (state, action) => {
+      state[action.payload.house] = state[action.payload.house] + action.payload.points
+    },
+    removePoints: (state, action) => {
+      state[action.payload.house] = state[action.payload.house] - action.payload.points
+    }
   }
-}
+})
 
-export default pointsReducer;
+export const {addPoints, removePoints} = pointsSlice.actions
+export default pointsSlice.reducer
