@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { actions } from '../../actions';
+import {  actions } from '../../actions'
 import { bindActionCreators } from 'redux';
 
 function House({ house, points }) {
@@ -20,7 +20,7 @@ function House({ house, points }) {
       <h2 className="house-name">{house}</h2>
       <p role="points" className="house-points">Points: {points}</p>
       <div className="buttons">
-        <button onClick={() => handleAddPoints()}> + 10 </button>
+        <button onClick={handleAddPoints}> + 10 </button>
         <button onClick={handleRemovePoints}> - 10 </button>
       </div>
     </div>

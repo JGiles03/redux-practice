@@ -9,7 +9,10 @@ function HogwartsLetter() {
 
   return (
     <div className="hogwarts-letter">
-      
+      <form>
+        <h2>Enter Your Name:</h2>
+        <input type='text' onChange={handleChange}></input>
+      </form>
       
       {name && (
         <>

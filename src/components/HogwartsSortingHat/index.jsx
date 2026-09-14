@@ -6,7 +6,8 @@ function HogwartsSortingHat() {
   function handleClick() {
     const houses = ['Gryffindor', 'Hufflepuff', 'Ravenclaw', 'Slytherin'];
     const randomHouse = houses[Math.floor(Math.random() * houses.length)];
-    
+    setHouse(randomHouse)
+    document.body.style.background = getHouseColor(randomHouse)
   }
 
   function getHouseColor(house) {
@@ -26,7 +27,7 @@ function HogwartsSortingHat() {
 
   return (
     <div className="hogwarts-sorting-hat">
-      {!house && <button onClick={handleClick}>?</button>}
+      {!house && <button onClick={handleClick}>Sort Me!</button>}
       {house && (
         <>
           <h1 data-testid="house-name">You have been sorted into {house}!</h1>

@@ -1,17 +1,17 @@
-export const addPoints = (house) => {
-    return (dispatch) => {
-        dispatch({
+export function addPoints (house, points) {
+    const dispatch = {
             type: "ADD_POINTS",
-            payload: house
-        })
-    }
+            house: house,
+            points: points
+        }
+    return dispatch  
 }
 
-export const removePoints = (house) => {
-    return (dispatch) => {
-        dispatch({
+export function removePoints (house, points) {
+    const dispatch = {
             type: "REMOVE_POINTS",
-            payload: house
-        })
-    }
+            house: house,
+            points: points
+        }
+    return dispatch  
 }
