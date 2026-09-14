@@ -7,7 +7,7 @@ function HogwartsSortingHat() {
     const houses = ['Gryffindor', 'Hufflepuff', 'Ravenclaw', 'Slytherin'];
     const randomHouse = houses[Math.floor(Math.random() * houses.length)];
     setHouse(randomHouse)
-    document.body.style.background = getHouseColor(randomHouse)
+    
   }
 
   function getHouseColor(house) {
@@ -24,6 +24,7 @@ function HogwartsSortingHat() {
         return '#FFFFFF';
     }
   }
+  document.body.style.background = getHouseColor(house)
 
   return (
     <div className="hogwarts-sorting-hat">
