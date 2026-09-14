@@ -4,7 +4,12 @@ import { useSelector } from 'react-redux';
 
 function PointsDisplay() {
     const houses = ['Gryffindor', 'Hufflepuff', 'Ravenclaw','Slytherin']
-    const points = [] //Must Update
+    const points = {
+      Gryffindor: 0,
+      Hufflepuff: 0,
+      Ravenclaw: 0,
+      Slytherin: 0
+    } //Must Update
     const maxPoints = null //Must Update
     const winner = null //Must Update
     const colors = {
@@ -16,7 +21,7 @@ function PointsDisplay() {
 
     return (
     <div data-testid="app" className="app" style={{ backgroundColor: colors[winner] }}>
-      <h1 className="title"></h1>
+      <h1 className="title">Hogwarts House Point Manager</h1>
       <div role='article' className="houses">
         {houses.map(house => (
            <House key={house} house={house} points={points[house]} /> 

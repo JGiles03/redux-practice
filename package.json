@@ -5,7 +5,7 @@
   "main": "vite.config.js",
   "scripts": {
     "dev": "vite",
-    "test": "vitest --reporter"
+    "test": "vitest --reporter verbose"
   },
   "keywords": [],
   "author": "",

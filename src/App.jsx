@@ -5,9 +5,14 @@ import  { Header } from './components';
 
 function App(){
     return (
-        <>
-            <h1>I love Harry Potter</h1>
-        </>
+        <Routes>
+            <Route path="/" element={<Header />}>
+                <Route index element={<Pages.HomePage />} />
+                <Route path="/points" element={<Pages.PointsPage />} />
+                <Route path="/letter" element={<Pages.LetterPage />} />
+                <Route path="/sortingHat" element={<Pages.SortingHatPage />} />
+            </Route>
+        </Routes>
     )
 };
 
