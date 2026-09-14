@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { addPoints, removePoints } from './index';
+import { addPoints, removePoints } from './actions';
 
 describe('addPoints action creator', () => {
   it('returns an object with the type "ADD_POINTS" and the house and points properties', () => {
